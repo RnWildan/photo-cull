@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Photo Cull</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>📷 Photo Cull</h1>
+  <p class="sub">Deterministic focus / sharpness / blur / exposure culling — runs locally, nothing leaves your machine.</p>
+</header>
+
+<main>
+  <section class="controls">
+    <form id="cull-form">
+      <input type="text" id="path" placeholder="/path/to/photos" autocomplete="off" required>
+      <label class="check"><input type="checkbox" id="recursive"> recursive</label>
+      <button type="submit" id="run-btn">Cull</button>
+    </form>
+    <div id="status" class="status"></div>
+  </section>
+
+  <section id="stats" class="stats hidden"></section>
+
+  <section id="sheet-wrap" class="hidden">
+    <h2>Contact sheet</h2>
+    <img id="sheet" alt="contact sheet">
+  </section>
+
+  <section id="results" class="hidden">
+    <div class="results-head">
+      <h2>Results</h2>
+      <div class="filters" id="filters"></div>
+    </div>
+    <div id="grid" class="grid"></div>
+  </section>
+</main>
+
+<script src="app.js"></script>
+
+<div id="lightbox">
+  <img alt="">
+  <div class="lb-meta"></div>
+</div>
+</body>
+</html>
